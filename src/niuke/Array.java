@@ -22,37 +22,7 @@ public class Array {
 
 class Solution {
 	public boolean Find(int target, int[][] array) {
-		// 判断二维数组是否为空
-		// 一是数组首地址是否为空
-		// 二是是否为{}，也就是array.length==0的情况
-		// 三是{{}}，这时array.length=1，但是array[0].length==0。满足任意一个条件就可以返回false了。
-		if (array == null || array.length == 0 || (array.length == 1 && array[0].length == 0))
-			return false;
-		int row = array.length;
-		int column = array[0].length;
-		return Find(target, array, row, column);
-	}
 
-	public boolean Find(int target, int[][] array, int row, int column) {
-		// 判断二维数组是否为空
-		// 一是数组首地址是否为空
-		// 二是是否为{}，也就是array.length==0的情况
-		// 三是{{}}，这时array.length=1，但是array[0].length==0。满足任意一个条件就可以返回false了。
-		if (array == null || array.length == 0 || (array.length == 1 && array[0].length == 0))
-			return false;
-		else {
-			int current = array[0][column];// 右上角元素
-			if (current == target)
-				return true;
-			if (current > target) {
-				column--;
-				Find(target, array, row, column);
-			}
-			if (current < target) {
-				row--;
-				Find(target, array, row, column);
-			}
-		}
-		return false;
+		
 	}
 }
